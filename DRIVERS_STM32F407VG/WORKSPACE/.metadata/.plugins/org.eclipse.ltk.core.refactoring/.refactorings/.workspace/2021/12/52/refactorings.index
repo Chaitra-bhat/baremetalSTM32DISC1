@@ -1,2 +1,2 @@
-1640013420794	Delete resource '01_gpio_drivers/Src/main.c'
-1640015095142	Delete resource '01_gpio_drivers'
+1640431122596	Delete resource 'gpio_drivers'
+1640431814911	Delete resource 'gpio_drivers/drivers/Inc/stm32f4xx_driver.h'

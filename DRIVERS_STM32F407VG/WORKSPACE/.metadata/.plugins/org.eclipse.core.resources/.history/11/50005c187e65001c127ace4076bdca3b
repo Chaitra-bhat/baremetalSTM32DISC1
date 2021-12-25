@@ -1,0 +1,68 @@
+/*
+ * stm32f4xx_driver.h
+ *
+ *  Created on: Dec 25, 2021
+ *      Author: Navjeevan
+ */
+
+#ifndef INC_STM32F4XX_DRIVER_H_
+#define INC_STM32F4XX_DRIVER_H_
+
+//MEMORY ADDRESS OF MEMORY PERIPHERALS
+#define	FLASH_BASEADDR		0x8000000U
+#define SRAM1_BASEADDR		0x2000000U
+
+//REGISTER DETAILS OF AHB1 INTERFACES
+#define GPIOA				0x40020000U
+#define GPIOB				0x40020400U
+#define GPIOC				0x40020800U
+#define GPIOD				0x40020C00U
+#define GPIOE				0x40021000U
+#define GPIOF				0x40021400U
+#define GPIOG				0x40021800U
+#define GPIOH				0x40021C00U
+#define GPIOI 				0x40022000U
+#define GPIOJ				0x40022400U
+#define GPIOK				0x40022800U
+#define CRC					0x40023000U
+#define RCC					0x40023800U
+#define FLASH_INTERFACE		0x40023C00U
+#define BKPSRAM				0x40024000U
+#define DMA1				0x40026000U
+#define DMA2				0x40026400U
+#define ETHERNET_MAC		0x40028000U
+#define DMA2D				0x4002B000U
+#define USB_OTG_HS			0x40040000U
+
+//REGISTER DETAILS OF AHB2 INTERFACES
+#define USB_OTG_FS			0x50000000U
+#define DCMI				0x50050000U
+#define CRYP				0x50060000U
+#define HASH				0x50060400U
+#define RNG					0x50060800U
+
+//REGISTER DETAILS OF AHB3 INTERFACES
+#define FSMC				0xA0000000U
+
+//REGISTER DETAILS OF APB1 INTERFACES
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+
+
+
+
+
+
+
+
+
+
+
+#endif /* INC_STM32F4XX_DRIVER_H_ */
