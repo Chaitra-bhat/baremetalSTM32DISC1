@@ -1,0 +1,110 @@
+/*
+ * gpio.c
+ *
+ *  Created on: Dec 25, 2021
+ *      Author: Navjeevan
+ */
+#include<gpio.h>
+
+//INITILIZATION AND DEINITILIZATION
+void GPIO_Init(GPIOHandle_t *pGPIOHandle)
+{
+
+}
+
+void GPIO_DeInit(GPIO_RegDef_t *pGPIOx)
+{
+
+}
+
+
+//PERIPHERAL CLOCK ENABLE AND DISBALE
+void GPIO_PeriClockEnable(GPIOHandle_t *GPIOHandle, uint8_t EnaOrDis)
+{
+	if(EnaOrDis == ENABLE)
+	{
+	if(GPIOHandle->pGPIOx == GPIOA)
+		GPIOA_PCLK_ENABLE();
+	else if(GPIOHandle->pGPIOx == GPIOB)
+		GPIOB_PCLK_ENABLE();
+	else if(GPIOHandle->pGPIOx == GPIOC)
+		GPIOC_PCLK_ENABLE();
+	else if(GPIOHandle->pGPIOx == GPIOD)
+		GPIOD_PCLK_ENABLE();
+	else if(GPIOHandle->pGPIOx == GPIOE)
+		GPIOE_PCLK_ENABLE();
+	else if(GPIOHandle->pGPIOx == GPIOF)
+		GPIOF_PCLK_ENABLE();
+	else if(GPIOHandle->pGPIOx == GPIOG)
+		GPIOG_PCLK_ENABLE();
+	else if(GPIOHandle->pGPIOx == GPIOH)
+		GPIOH_PCLK_ENABLE();
+	else if(GPIOHandle->pGPIOx == GPIOI)
+		GPIOI_PCLK_ENABLE();
+	else if(GPIOHandle->pGPIOx == GPIOJ)
+		GPIOJ_PCLK_ENABLE();
+	}
+	else
+	{
+		if(GPIOHandle->pGPIOx == GPIOA)
+			GPIOA_PCLK_DISABLE();
+		else if(GPIOHandle->pGPIOx == GPIOB)
+			GPIOB_PCLK_DISABLE();
+		else if(GPIOHandle->pGPIOx == GPIOC)
+			GPIOC_PCLK_DISABLE();
+		else if(GPIOHandle->pGPIOx == GPIOD)
+			GPIOD_PCLK_DISABLE();
+		else if(GPIOHandle->pGPIOx == GPIOE)
+			GPIOE_PCLK_DISABLE();
+		else if(GPIOHandle->pGPIOx == GPIOF)
+			GPIOF_PCLK_DISABLE();
+		else if(GPIOHandle->pGPIOx == GPIOG)
+			GPIOG_PCLK_DISABLE();
+		else if(GPIOHandle->pGPIOx == GPIOH)
+			GPIOH_PCLK_DISABLE();
+		else if(GPIOHandle->pGPIOx == GPIOI)
+			GPIOI_PCLK_DISABLE();
+		else if(GPIOHandle->pGPIOx == GPIOJ)
+			GPIOJ_PCLK_DISABLE();
+	}
+}
+
+
+//READING FROM PIN AND PORT
+uint8_t GPIO_ReadPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
+{
+	return 0;
+}
+
+uint16_t GPIO_ReadPort(GPIO_RegDef_t *pGPIOx)
+{
+	return 0;
+}
+
+//WRITING TO PIN AND PORT
+void GPIO_WriteToPin(void)
+{
+
+}
+
+void GPIO_WritePort(void)
+{
+
+}
+
+//TOGGLE PIN
+void GPIO_TogglePin(void)
+{
+
+}
+
+//IRQ RELATED FUNCTIONS
+void GPIO_IRQConfig(void)
+{
+
+}
+
+void IRQHandle(void){
+
+}
+

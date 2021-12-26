@@ -1,20 +1,10 @@
-19:29:46 **** Incremental Build of configuration Debug for project gpio_drivers ****
+15:03:55 **** Incremental Build of configuration Debug for project gpio_drivers ****
 make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/Navjeevan/OneDrive/Documents/GitHub/baremetalSTM32DISC1/DRIVERS_STM32F407VG/WORKSPACE/gpio_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "gpio_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Navjeevan\OneDrive\Documents\GitHub\baremetalSTM32DISC1\DRIVERS_STM32F407VG\WORKSPACE\gpio_drivers\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gpio_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: gpio_drivers.elf
- 
-arm-none-eabi-objdump -h -S  gpio_drivers.elf  > "gpio_drivers.list"
-arm-none-eabi-objcopy  -O binary  gpio_drivers.elf  "gpio_drivers.bin"
 arm-none-eabi-size   gpio_drivers.elf 
    text	   data	    bss	    dec	    hex	filename
-    676	      8	   1568	   2252	    8cc	gpio_drivers.elf
+   1832	      8	   1568	   3408	    d50	gpio_drivers.elf
 Finished building: default.size.stdout
  
-Finished building: gpio_drivers.bin
-Finished building: gpio_drivers.list
- 
- 
 
-19:29:47 Build Finished. 0 errors, 0 warnings. (took 1s.40ms)
+15:03:56 Build Finished. 0 errors, 0 warnings. (took 250ms)
 

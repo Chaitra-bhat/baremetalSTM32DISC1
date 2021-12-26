@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;gpio_drivers/Src/01_ledToggle.c&apos; to &apos;01_blueLedToggle.c&apos;" description="Rename resource &apos;01_ledToggle.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Src/01_ledToggle.c" name="01_blueLedToggle.c" stamp="1640503143192" updateReferences="true"/>
+</session>

@@ -15,6 +15,9 @@
 #define DISABLE			0U
 #define SET				ENABLE
 #define RESET			DISABLE
+#define BUTTON_PRESSED	SET
+
+
 #define __vo volatile
 
 //MEMORY ADDRESS OF MEMORY PERIPHERALS
@@ -143,7 +146,7 @@ typedef struct{
 
 }RCC_RegDef_t;
 
-
+//REGISTER DEFINITION FOR RCC
 typedef struct{
 	__vo uint32_t MODER;
 	__vo uint32_t OTYPER;
@@ -159,46 +162,56 @@ typedef struct{
 
 
 //PERIPHERAL ADDRESS  AHB1 PERIPHERALS
-#define GPIOA			(GPIO_RegDef_t*)GPIOA_BASEADDR
-#define GPIOB			(GPIO_RegDef_t*)GPIOB_BASEADDR
-#define GPIOC			(GPIO_RegDef_t*)GPIOC_BASEADDR
-#define GPIOD			(GPIO_RegDef_t*)GPIOD_BASEADDR
-#define GPIOE			(GPIO_RegDef_t*)GPIOE_BASEADDR
-#define GPIOF			(GPIO_RegDef_t*)GPIOF_BASEADDR
-#define GPIOG			(GPIO_RegDef_t*)GPIOG_BASEADDR
-#define GPIOH			(GPIO_RegDef_t*)GPIOH_BASEADDR
-#define GPIOI			(GPIO_RegDef_t*)GPIOI_BASEADDR
-#define GPIOJ			(GPIO_RegDef_t*)GPIOJ_BASEADDR
-#define GPIOK			(GPIO_RegDef_t*)GPIOK_BASEADDR
+#define GPIOA			((GPIO_RegDef_t*)GPIOA_BASEADDR)
+#define GPIOB			((GPIO_RegDef_t*)GPIOB_BASEADDR)
+#define GPIOC			((GPIO_RegDef_t*)GPIOC_BASEADDR)
+#define GPIOD			((GPIO_RegDef_t*)GPIOD_BASEADDR)
+#define GPIOE			((GPIO_RegDef_t*)GPIOE_BASEADDR)
+#define GPIOF			((GPIO_RegDef_t*)GPIOF_BASEADDR)
+#define GPIOG			((GPIO_RegDef_t*)GPIOG_BASEADDR)
+#define GPIOH			((GPIO_RegDef_t*)GPIOH_BASEADDR)
+#define GPIOI			((GPIO_RegDef_t*)GPIOI_BASEADDR)
+#define GPIOJ			((GPIO_RegDef_t*)GPIOJ_BASEADDR)
+#define GPIOK			((GPIO_RegDef_t*)GPIOK_BASEADDR)
 
-#define RCC				(GPIO_RegDef_t*)RCC_BASEADDR
+#define RCC				((RCC_RegDef_t*)RCC_BASEADDR)
 
 
 //MACROS FOR GPIO PERIPHERAL ENABLE
-#define GPIOA_PCLK_ENABLE			(RCC->AHB1ENR |= (1<<0))
-#define GPIOB_PCLK_ENABLE			(RCC->AHB1ENR |= (1<<1))
-#define GPIOC_PCLK_ENABLE			(RCC->AHB1ENR |= (1<<2))
-#define GPIOD_PCLK_ENABLE			(RCC->AHB1ENR |= (1<<3))
-#define GPIOE_PCLK_ENABLE			(RCC->AHB1ENR |= (1<<4))
-#define GPIOF_PCLK_ENABLE			(RCC->AHB1ENR |= (1<<5))
-#define GPIOG_PCLK_ENABLE			(RCC->AHB1ENR |= (1<<6))
-#define GPIOH_PCLK_ENABLE			(RCC->AHB1ENR |= (1<<7))
-#define GPIOI_PCLK_ENABLE			(RCC->AHB1ENR |= (1<<8))
-#define GPIOJ_PCLK_ENABLE			(RCC->AHB1ENR |= (1<<9))
+#define GPIOA_PCLK_ENABLE()				(RCC->RCC_AHB1ENR |= (1<<0))
+#define GPIOB_PCLK_ENABLE()				(RCC->RCC_AHB1ENR |= (1<<1))
+#define GPIOC_PCLK_ENABLE()				(RCC->RCC_AHB1ENR |= (1<<2))
+#define GPIOD_PCLK_ENABLE()				(RCC->RCC_AHB1ENR |= (1<<3))
+#define GPIOE_PCLK_ENABLE()				(RCC->RCC_AHB1ENR |= (1<<4))
+#define GPIOF_PCLK_ENABLE()				(RCC->RCC_AHB1ENR |= (1<<5))
+#define GPIOG_PCLK_ENABLE()				(RCC->RCC_AHB1ENR |= (1<<6))
+#define GPIOH_PCLK_ENABLE()				(RCC->RCC_AHB1ENR |= (1<<7))
+#define GPIOI_PCLK_ENABLE()				(RCC->RCC_AHB1ENR |= (1<<8))
+#define GPIOJ_PCLK_ENABLE()				(RCC->RCC_AHB1ENR |= (1<<9))
 
 //MACROS FOR GPIO PERIPHERAL DISABLE
-#define GPIOA_PCLK_DISABLE			(RCC->AHB1ENR &= ~(1<<0))
-#define GPIOB_PCLK_DISABLE			(RCC->AHB1ENR &= ~(1<<1))
-#define GPIOC_PCLK_DISABLE			(RCC->AHB1ENR &= ~(1<<2))
-#define GPIOD_PCLK_DISABLE			(RCC->AHB1ENR &= ~(1<<3))
-#define GPIOE_PCLK_DISABLE			(RCC->AHB1ENR &= ~(1<<4))
-#define GPIOF_PCLK_DISABLE			(RCC->AHB1ENR &= ~(1<<5))
-#define GPIOG_PCLK_DISABLE			(RCC->AHB1ENR &= ~(1<<6))
-#define GPIOH_PCLK_DISABLE			(RCC->AHB1ENR &= ~(1<<7))
-#define GPIOI_PCLK_DISABLE			(RCC->AHB1ENR &= ~(1<<8))
-#define GPIOJ_PCLK_DISABLE			(RCC->AHB1ENR &= ~(1<<9))
+#define GPIOA_PCLK_DISABLE()			(RCC->RCC_AHB1ENR &= ~(1<<0))
+#define GPIOB_PCLK_DISABLE()			(RCC->RCC_AHB1ENR &= ~(1<<1))
+#define GPIOC_PCLK_DISABLE()			(RCC->RCC_AHB1ENR &= ~(1<<2))
+#define GPIOD_PCLK_DISABLE()			(RCC->RCC_AHB1ENR &= ~(1<<3))
+#define GPIOE_PCLK_DISABLE()			(RCC->RCC_AHB1ENR &= ~(1<<4))
+#define GPIOF_PCLK_DISABLE()			(RCC->RCC_AHB1ENR &= ~(1<<5))
+#define GPIOG_PCLK_DISABLE()			(RCC->RCC_AHB1ENR &= ~(1<<6))
+#define GPIOH_PCLK_DISABLE()			(RCC->RCC_AHB1ENR &= ~(1<<7))
+#define GPIOI_PCLK_DISABLE()			(RCC->RCC_AHB1ENR &= ~(1<<8))
+#define GPIOJ_PCLK_DISABLE()			(RCC->RCC_AHB1ENR &= ~(1<<9))
 
-
+//MACROS FOR GPIO PERIPHERAL REG RESET
+#define GPIOA_REG_RESET()				do{ (RCC->RCC_AHB1RSTR |= (1<<0)); (RCC->RCC_AHB1RSTR &= ~(1<<0)); }while(0)
+#define GPIOB_REG_RESET()				do{ (RCC->RCC_AHB1RSTR |= (1<<1)); (RCC->RCC_AHB1RSTR &= ~(1<<1)); }while(0)
+#define GPIOC_REG_RESET()				do{ (RCC->RCC_AHB1RSTR |= (1<<2)); (RCC->RCC_AHB1RSTR &= ~(1<<2)); }while(0)
+#define GPIOD_REG_RESET()				do{ (RCC->RCC_AHB1RSTR |= (1<<3)); (RCC->RCC_AHB1RSTR &= ~(1<<3)); }while(0)
+#define GPIOE_REG_RESET()				do{ (RCC->RCC_AHB1RSTR |= (1<<4)); (RCC->RCC_AHB1RSTR &= ~(1<<4)); }while(0)
+#define GPIOF_REG_RESET()				do{ (RCC->RCC_AHB1RSTR |= (1<<5)); (RCC->RCC_AHB1RSTR &= ~(1<<5)); }while(0)
+#define GPIOG_REG_RESET()				do{ (RCC->RCC_AHB1RSTR |= (1<<6)); (RCC->RCC_AHB1RSTR &= ~(1<<6)); }while(0)
+#define GPIOH_REG_RESET()				do{ (RCC->RCC_AHB1RSTR |= (1<<7)); (RCC->RCC_AHB1RSTR &= ~(1<<7)); }while(0)
+#define GPIOI_REG_RESET()				do{ (RCC->RCC_AHB1RSTR |= (1<<8)); (RCC->RCC_AHB1RSTR &= ~(1<<8)); }while(0)
+#define GPIOJ_REG_RESET()				do{ (RCC->RCC_AHB1RSTR |= (1<<9)); (RCC->RCC_AHB1RSTR &= ~(1<<9)); }while(0)
 
 
 //#define
