@@ -107,6 +107,26 @@
 #define SAI1_BASEADDR				0x40015800U
 #define LCD_TFT_BASEADDR			0x40016800U
 
+// IRQ NUMBERS POSITION FROM REFERENCE MANUAL
+#define IRQNumber_0					6U
+#define IRQNumber_1					7U
+#define IRQNumber_2					8U
+#define IRQNumber_3	 				9U
+#define IRQNumber_4					10U
+#define IRQNumber_5_9				23U
+#define IRQNumber_10_15				40U
+
+//Processor specific details
+#define NVIC_ISER0						((__vo uint32_t*)0xE000E100U)
+#define NVIC_ISER1						((__vo uint32_t*)0xE000E104U)
+#define NVIC_ISER2						((__vo uint32_t*)0xE000E108U)
+#define NVIC_ICER0						((__vo uint32_t*)0XE000E180U)
+#define NVIC_ICER1						((__vo uint32_t*)0XE000E184U)
+#define NVIC_ICER2						((__vo uint32_t*)0XE000E188U)
+#define NVIC_IPR0						((__vo uint32_t*)0xE000E400U)
+
+#define NO_OF_PRIOBITS_IMPLEMENTED		4U
+
 //REGISTER DEFINITION FOR RCC
 typedef struct{
 	__vo uint32_t RCC_CR;
@@ -161,6 +181,27 @@ typedef struct{
 }GPIO_RegDef_t;
 
 
+// rEGISTER DEFINITION FOR EXTI
+typedef struct
+{
+	__vo uint32_t EXTI_IMR;
+	__vo uint32_t EXTI_EMR;
+	__vo uint32_t EXTI_RTSR;
+	__vo uint32_t EXTI_FTSR;
+	__vo uint32_t EXTI_SWIER;
+	__vo uint32_t EXTI_PR;
+
+}EXTI_RegDef_t;
+
+//REGISTER DEFINITION FOR SYSCFG
+typedef struct
+{
+	__vo uint32_t SYSCFG_MEMRMP;
+	__vo uint32_t SYSCFG_PMC;
+	__vo uint32_t SYSCFG_EXTICR[4];
+	__vo uint32_t SYSCFG_CMPCR;
+}SYSCFG_RegDef_t;
+
 //PERIPHERAL ADDRESS  AHB1 PERIPHERALS
 #define GPIOA			((GPIO_RegDef_t*)GPIOA_BASEADDR)
 #define GPIOB			((GPIO_RegDef_t*)GPIOB_BASEADDR)
@@ -173,9 +214,11 @@ typedef struct{
 #define GPIOI			((GPIO_RegDef_t*)GPIOI_BASEADDR)
 #define GPIOJ			((GPIO_RegDef_t*)GPIOJ_BASEADDR)
 #define GPIOK			((GPIO_RegDef_t*)GPIOK_BASEADDR)
-
 #define RCC				((RCC_RegDef_t*)RCC_BASEADDR)
 
+// PERIPHERAL ADDRESS OF APB2 REGISTERS
+#define EXTI			((EXTI_RegDef_t*)EXTI_BASEADDR)
+#define SYSCFG			((SYSCFG_RegDef_t*)SYSCFG_BASEADDR)
 
 //MACROS FOR GPIO PERIPHERAL ENABLE
 #define GPIOA_PCLK_ENABLE()				(RCC->RCC_AHB1ENR |= (1<<0))
@@ -213,10 +256,24 @@ typedef struct{
 #define GPIOI_REG_RESET()				do{ (RCC->RCC_AHB1RSTR |= (1<<8)); (RCC->RCC_AHB1RSTR &= ~(1<<8)); }while(0)
 #define GPIOJ_REG_RESET()				do{ (RCC->RCC_AHB1RSTR |= (1<<9)); (RCC->RCC_AHB1RSTR &= ~(1<<9)); }while(0)
 
+//Peripheral clock enable for SYSCFG
+#define SYSCFG_PCLK_ENABLE()			(RCC->APB2ENR |= (1<<14))
 
-//#define
-//#define
-//#define
+
+
+//
+#define GPIOBASEADDR_TO_CODE(x)		   ((x == GPIOA) ? 0 :\
+										(x == GPIOB) ? 1 :\
+										(x == GPIOC) ? 2 :\
+										(x == GPIOD) ? 3 :\
+										(x == GPIOE) ? 4 :\
+										(x == GPIOF) ? 5 :\
+										(x == GPIOG) ? 6 :\
+										(x == GPIOH) ? 7 :\
+										(x == GPIOI) ? 8 :\
+										(x == GPIOJ) ? 9 : 0)
+
+
 
 
 

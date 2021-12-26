@@ -37,9 +37,9 @@ uint16_t GPIO_ReadPort(GPIO_RegDef_t *pGPIOx);
 void GPIO_WriteToPin(GPIO_RegDef_t *pGPIOx,  uint8_t value, uint8_t PinNumber);
 void GPIO_WritePort(GPIO_RegDef_t *pGPIOx,  uint16_t value);
 void GPIO_TogglePin(GPIO_RegDef_t *pGPIOx,  uint8_t PinNumber);
-void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t IRQpriority, uint8_t EnaOrDis);
-void IRQHandle(uint8_t PinNumber);
-
+void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnaOrDis);
+void GPIO_IRQHandler(uint8_t PinNumber);
+void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQpriority);
 
 /*
  * PIN MODE TYPES
@@ -50,7 +50,7 @@ void IRQHandle(uint8_t PinNumber);
 #define GPIO_MODE_ANALOG			3U
 #define GPIO_MODE_FT				4U
 #define GPIO_MODE_RT				5U
-#define GPIO_MODE_RfT				6U
+#define GPIO_MODE_RFT				6U
 
 /*
  * OUTPUT TYPE
@@ -92,7 +92,6 @@ void IRQHandle(uint8_t PinNumber);
 #define GPIO_PINNUMBER_13			13U
 #define GPIO_PINNUMBER_14			14U
 #define GPIO_PINNUMBER_15			15U
-
 
 
 
