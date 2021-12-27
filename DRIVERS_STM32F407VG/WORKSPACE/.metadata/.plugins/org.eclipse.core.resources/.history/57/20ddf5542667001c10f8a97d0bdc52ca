@@ -1,0 +1,66 @@
+/*
+ * spi.h
+ *
+ *  Created on: Dec 27, 2021
+ *      Author: Navjeevan
+ */
+
+#ifndef INC_SPI_H_
+#define INC_SPI_H_
+
+#include<stm32f4xx_driver.h>
+
+typedef struct{
+	__vo uint32_t SPI_DEVICEMODE;
+	__vo uint32_t SPI_BusConfig;
+	__vo uint32_t SPI_SclkSpeed;
+	__vo uint32_t SPI_DFF;
+	__vo uint32_t SPI_CPOL;
+	__vo uint32_t SPI_CPHA;
+	__vo uint32_t SPI_SSM;
+}SPI_Config_t;
+
+
+typedef struct{
+	SPI_RegDef_t *pSPIx;
+	SPI_Config_t SPIConfig;
+}SPI_Handle_t;
+
+
+
+/*
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+*/
+
+
+
+// Function prototypes
+void SPI_PeriClkEnable(SPI_RegDef_t *pSPIx, uint8_t EnaOrDis);
+
+void delay(uint32_t delayVal);
+void SPI_Init(SPI_Handle_t *pSPIHandle);
+void GPIO_DeInit(SPI_Handle_t *pSPIHandle);
+#endif /* INC_SPI_H_ */

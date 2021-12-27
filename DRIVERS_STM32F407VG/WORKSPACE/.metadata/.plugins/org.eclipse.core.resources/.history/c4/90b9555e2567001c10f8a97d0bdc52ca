@@ -1,0 +1,16 @@
+/*
+ * spi.c
+ *
+ *  Created on: Dec 27, 2021
+ *      Author: Navjeevan
+ */
+
+#include<spi.h>
+
+void SPI_PeriClkEnable(SPI_Handle_t *pSPIx, uint8_t EnaOrDis)
+{
+	if(EnaOrDis == ENABLE)
+	{
+
+	}
+}

@@ -1,49 +1,21 @@
-17:33:16 **** Incremental Build of configuration Debug for project gpio_drivers ****
+21:20:25 **** Incremental Build of configuration Debug for project spi_drivers ****
 make -j4 all 
-arm-none-eabi-gcc "../drivers/Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/Navjeevan/OneDrive/Documents/GitHub/baremetalSTM32DISC1/DRIVERS_STM32F407VG/WORKSPACE/gpio_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"drivers/Src/gpio.d" -MT"drivers/Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/gpio.o"
-arm-none-eabi-gcc "../Src/09_Interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/Navjeevan/OneDrive/Documents/GitHub/baremetalSTM32DISC1/DRIVERS_STM32F407VG/WORKSPACE/gpio_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/09_Interrupt.d" -MT"Src/09_Interrupt.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/09_Interrupt.o"
-arm-none-eabi-gcc -o "gpio_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Navjeevan\OneDrive\Documents\GitHub\baremetalSTM32DISC1\DRIVERS_STM32F407VG\WORKSPACE\gpio_drivers\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gpio_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: gpio_drivers.elf
+arm-none-eabi-gcc "../drivers/Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/Navjeevan/OneDrive/Documents/GitHub/baremetalSTM32DISC1/DRIVERS_STM32F407VG/WORKSPACE/spi_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"drivers/Src/gpio.d" -MT"drivers/Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/gpio.o"
+arm-none-eabi-gcc "../drivers/Src/spi.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/Navjeevan/OneDrive/Documents/GitHub/baremetalSTM32DISC1/DRIVERS_STM32F407VG/WORKSPACE/spi_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"drivers/Src/spi.d" -MT"drivers/Src/spi.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/spi.o"
+arm-none-eabi-gcc "../Src/09_Interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/Navjeevan/OneDrive/Documents/GitHub/baremetalSTM32DISC1/DRIVERS_STM32F407VG/WORKSPACE/spi_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/09_Interrupt.d" -MT"Src/09_Interrupt.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/09_Interrupt.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/Navjeevan/OneDrive/Documents/GitHub/baremetalSTM32DISC1/DRIVERS_STM32F407VG/WORKSPACE/spi_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/Navjeevan/OneDrive/Documents/GitHub/baremetalSTM32DISC1/DRIVERS_STM32F407VG/WORKSPACE/spi_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "spi_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Navjeevan\OneDrive\Documents\GitHub\baremetalSTM32DISC1\DRIVERS_STM32F407VG\WORKSPACE\spi_drivers\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="spi_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: spi_drivers.elf
  
-arm-none-eabi-objdump -h -S  gpio_drivers.elf  > "gpio_drivers.list"
-arm-none-eabi-objcopy  -O binary  gpio_drivers.elf  "gpio_drivers.bin"
-arm-none-eabi-size   gpio_drivers.elf 
+arm-none-eabi-size   spi_drivers.elf 
+arm-none-eabi-objdump -h -S  spi_drivers.elf  > "spi_drivers.list"
+arm-none-eabi-objcopy  -O binary  spi_drivers.elf  "spi_drivers.bin"
    text	   data	    bss	    dec	    hex	filename
-   2632	      8	   1568	   4208	   1070	gpio_drivers.elf
+   2640	      8	   1568	   4216	   1078	spi_drivers.elf
 Finished building: default.size.stdout
- 
-Finished building: gpio_drivers.list
-Finished building: gpio_drivers.bin
+Finished building: spi_drivers.list
  
  
-17:33:25 **** Incremental Build of configuration Debug for project gpio_drivers ****
-make -j4 all 
-arm-none-eabi-size   gpio_drivers.elf 
-   text	   data	    bss	    dec	    hex	filename
-   2632	      8	   1568	   4208	   1070	gpio_drivers.elf
-Finished building: default.size.stdout
- 
-17:34:54 **** Incremental Build of configuration Debug for project gpio_drivers ****
-make -j4 all 
-arm-none-eabi-size   gpio_drivers.elf 
-   text	   data	    bss	    dec	    hex	filename
-   2632	      8	   1568	   4208	   1070	gpio_drivers.elf
-Finished building: default.size.stdout
- 
-17:40:56 **** Incremental Build of configuration Debug for project gpio_drivers ****
-make -j4 all 
-arm-none-eabi-gcc "../Src/09_Interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/Navjeevan/OneDrive/Documents/GitHub/baremetalSTM32DISC1/DRIVERS_STM32F407VG/WORKSPACE/gpio_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/09_Interrupt.d" -MT"Src/09_Interrupt.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/09_Interrupt.o"
-arm-none-eabi-gcc -o "gpio_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Navjeevan\OneDrive\Documents\GitHub\baremetalSTM32DISC1\DRIVERS_STM32F407VG\WORKSPACE\gpio_drivers\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gpio_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: gpio_drivers.elf
- 
-arm-none-eabi-objdump -h -S  gpio_drivers.elf  > "gpio_drivers.list"
-arm-none-eabi-objcopy  -O binary  gpio_drivers.elf  "gpio_drivers.bin"
-arm-none-eabi-size   gpio_drivers.elf 
-   text	   data	    bss	    dec	    hex	filename
-   2640	      8	   1568	   4216	   1078	gpio_drivers.elf
-Finished building: default.size.stdout
- 
-Finished building: gpio_drivers.list
-Finished building: gpio_drivers.bin
- 
+Finished building: spi_drivers.bin
  
