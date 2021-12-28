@@ -1,0 +1,122 @@
+/*
+ * spi.c
+ *
+ *  Created on: Dec 27, 2021
+ *      Author: Navjeevan
+ */
+
+#include<spi.h>
+
+void SPI_PeriClkEnable(SPI_RegDef_t *pSPIx, uint8_t EnaOrDis)
+{
+	if(EnaOrDis == ENABLE)
+	{
+		if(pSPIx == SPI1)
+			SPI1_PCLK_ENABLE();
+		else if(pSPIx == SPI2)
+			SPI2_PCLK_ENABLE();
+		else if(pSPIx == SPI3)
+			SPI3_PCLK_ENABLE();
+	}
+	else
+	{
+		if(pSPIx == SPI1)
+			SPI1_PCLK_ENABLE();
+		else if(pSPIx == SPI2)
+			SPI2_PCLK_ENABLE();
+		else if(pSPIx == SPI3)
+			SPI3_PCLK_ENABLE();
+	}
+}
+
+void SPI_Init(SPI_Handle_t *pSPIHandle)
+{
+	//CONFIGURE spi CR1 REGISTER
+	uint32_t temp = 0;
+
+	//Configure device mode
+	temp |= (pSPIHandle->SPIConfig.SPI_DEVICEMODE << 2);
+
+	//2. Configure the bus config
+	if(pSPIHandle->SPIConfig.SPI_BusConfig == SPI_BUSCONFIG_FULLDUPLEX)
+	{
+		// BIDI mode should be cleared
+		temp &= ~(1<<15);
+
+	}
+	else if(pSPIHandle->SPIConfig.SPI_BusConfig == SPI_BUSCONFIG_HALFDUPLEX)
+	{
+		//BIDI mode should be set
+		temp |= (1<<15);
+	}
+	else if(pSPIHandle->SPIConfig.SPI_BusConfig == SPI_BUSCONFIG_SIMPLEX_RXONLY)
+	{
+		//BIDI mode should be cleared
+		temp &= ~(1<<15);
+		// RXOnly bit must be set
+		temp |= (1<<10);
+	}
+
+	//3. Configure the serail clock
+	temp |= pSPIHandle->SPIConfig.SPI_SclkSpeed << 3;
+
+	//4. Configure the DFF
+	temp |= pSPIHandle->SPIConfig.SPI_DFF <<11;
+
+	//5. configure the CPOL
+	temp |= pSPIHandle->SPIConfig.SPI_CPOL << 1;
+
+	//6. Configure the CPHA
+	temp|= pSPIHandle->SPIConfig.SPI_CPHA << 0;
+
+	//Save in main resgiter
+	pSPIHandle->pSPIx->SPI_CR1 = temp;
+
+}
+
+
+void SPI_DeInit(SPI_Handle_t *pSPIHandle)
+{
+
+
+
+}
+
+void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxBuffer, uint32_t length)
+{
+
+
+
+}
+
+
+
+void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t length)
+{
+
+
+}
+
+void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnaOrDis)
+{
+
+
+
+}
+
+
+void SPI_IRQHandler(SPI_Handle_t *pSPIHandle)
+{
+
+
+
+}
+
+
+void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQpriority)
+{
+
+
+
+}
+
