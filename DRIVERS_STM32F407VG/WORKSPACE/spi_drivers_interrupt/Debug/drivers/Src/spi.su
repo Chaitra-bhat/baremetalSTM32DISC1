@@ -1,0 +1,13 @@
+spi.c:10:6:SPI_PeriClkEnable	16	static
+spi.c:32:6:SPI_Init	24	static
+spi.c:83:6:SPI_DeInit	16	static
+spi.c:93:6:SPI_SendData	24	static
+spi.c:125:6:SPI_ReceiveData	24	static
+spi.c:156:6:SPI_IRQInterruptConfig	16	static
+spi.c:198:6:SPI_IRQHandler	16	static
+spi.c:206:6:SPI_IRQPriorityConfig	24	static
+spi.c:216:9:SPI_GetFlagStatus	16	static
+spi.c:225:6:SPI_PeripheralEnable	16	static
+spi.c:239:6:SPI_SSIConfig	16	static
+spi.c:252:9:SPI_SendDataIT	32	static
+spi.c:275:9:SPI_ReceiveDataIT	32	static

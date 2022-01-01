@@ -185,3 +185,15 @@ void SPI_SSIConfig(SPI_RegDef_t *pSPIx, uint8_t EnaOrDis)
 		pSPIx->SPI_CR1 &= ~(1<<8);
 	}
 }
+
+void SPI_SSOEConfig(SPI_RegDef_t *pSPIx, uint8_t EnaOrDis)
+{
+	if(EnaOrDis == ENABLE)
+	{
+		pSPIx->SPI_CR2 |= (1<<2);
+	}
+	else
+	{
+		pSPIx->SPI_CR2 &= ~(1<<2);
+	}
+}

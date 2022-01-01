@@ -1,0 +1,12 @@
+gpio.c:12:6:delay	24	static
+gpio.c:21:6:GPIO_Init	32	static
+gpio.c:122:6:GPIO_DeInit	16	static
+gpio.c:150:6:GPIO_PeriClockEnable	16	static
+gpio.c:204:9:GPIO_ReadPin	24	static
+gpio.c:211:10:GPIO_ReadPort	24	static
+gpio.c:221:6:GPIO_WriteToPin	16	static
+gpio.c:233:6:GPIO_WritePort	16	static
+gpio.c:242:6:GPIO_TogglePin	16	static
+gpio.c:250:6:GPIO_IRQInterruptConfig	16	static
+gpio.c:292:6:GPIO_IRQPriorityConfig	24	static
+gpio.c:301:6:GPIO_IRQHandler	16	static

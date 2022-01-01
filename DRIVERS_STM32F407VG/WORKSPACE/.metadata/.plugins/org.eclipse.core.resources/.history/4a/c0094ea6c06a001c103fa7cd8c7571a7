@@ -1,0 +1,13 @@
+/*
+ * uart.h
+ *
+ *  Created on: Dec 31, 2021
+ *      Author: Navjeevan
+ */
+
+#ifndef INC_UART_H_
+#define INC_UART_H_
+
+#include<stm32f4xx_driver.h>
+
+#endif /* INC_UART_H_ */

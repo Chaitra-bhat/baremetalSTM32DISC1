@@ -1,0 +1,23 @@
+12:50:55 **** Incremental Build of configuration Debug for project usart_drivers ****
+make -j4 all 
+arm-none-eabi-gcc "../drivers/Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/Navjeevan/OneDrive/Documents/GitHub/baremetalSTM32DISC1/DRIVERS_STM32F407VG/WORKSPACE/usart_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"drivers/Src/gpio.d" -MT"drivers/Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/gpio.o"
+arm-none-eabi-gcc "../drivers/Src/spi.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/Navjeevan/OneDrive/Documents/GitHub/baremetalSTM32DISC1/DRIVERS_STM32F407VG/WORKSPACE/usart_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"drivers/Src/spi.d" -MT"drivers/Src/spi.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/spi.o"
+arm-none-eabi-gcc "../drivers/Src/uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/Navjeevan/OneDrive/Documents/GitHub/baremetalSTM32DISC1/DRIVERS_STM32F407VG/WORKSPACE/usart_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"drivers/Src/uart.d" -MT"drivers/Src/uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/uart.o"
+arm-none-eabi-gcc "../Src/10_spi_testing.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/Navjeevan/OneDrive/Documents/GitHub/baremetalSTM32DISC1/DRIVERS_STM32F407VG/WORKSPACE/usart_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/10_spi_testing.d" -MT"Src/10_spi_testing.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/10_spi_testing.o"
+arm-none-eabi-gcc -o "usart_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Navjeevan\OneDrive\Documents\GitHub\baremetalSTM32DISC1\DRIVERS_STM32F407VG\WORKSPACE\usart_drivers\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usart_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usart_drivers.elf
+ 
+arm-none-eabi-objdump -h -S  usart_drivers.elf  > "usart_drivers.list"
+arm-none-eabi-objcopy  -O binary  usart_drivers.elf  "usart_drivers.bin"
+arm-none-eabi-size   usart_drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2904	      8	   1568	   4480	   1180	usart_drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: usart_drivers.list
+ 
+Finished building: usart_drivers.bin
+ 
+
+12:50:57 Build Finished. 0 errors, 0 warnings. (took 1s.267ms)
+

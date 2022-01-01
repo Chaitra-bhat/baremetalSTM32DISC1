@@ -1,0 +1,7 @@
+"Src/10_spi_testing.o"
+"Src/syscalls.o"
+"Src/sysmem.o"
+"Startup/startup_stm32f407vgtx.o"
+"drivers/Src/gpio.o"
+"drivers/Src/spi.o"
+"drivers/Src/uart.o"

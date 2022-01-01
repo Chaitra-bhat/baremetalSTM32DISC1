@@ -1,4 +1,4 @@
-"Src/09_Interrupt.o"
+"Src/01_blueLedToggle.o"
 "Src/syscalls.o"
 "Src/sysmem.o"
 "Startup/startup_stm32f407vgtx.o"

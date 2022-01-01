@@ -63,23 +63,55 @@ void SPI2_init()
 	SPI_Init(&pSPI2Handle);
 }
 
+void ButtonInit(void)
+{
+	GPIOHandle_t  pGPIOButton;
+
+		//Button Init
+		pGPIOButton.pGPIOx = GPIOA;
+		pGPIOButton.GPIO_PinConfig.GPIO_PinNumber = GPIO_PINNUMBER_0;
+		pGPIOButton.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_INPUT;
+		pGPIOButton.GPIO_PinConfig.GPIO_PinSpeed = GPIO_OSPEED_MEDIUM;
+		pGPIOButton.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_PUPDTYPE_NONE;
+
+		GPIO_PeriClockEnable(GPIOA, ENABLE);
+		GPIO_Init(&pGPIOButton);
+
+}
 
 int main()
 {
-	char userData[] = "Hel";
+	char userData[] = "Hello World !";
 	SPI2_GPIOInit();
+	ButtonInit();
 	SPI2_init();
 
-	//Enable the SPI peripheral
-	//SPI_PeripheralEnable(SPI2, ENABLE);
+	SPI_SSOEConfig(SPI2, ENABLE);
 
-	//SSI Enable
-	SPI_SSIConfig(SPI2, ENABLE);
+	while(1)
+	{
+			while(!(GPIO_ReadPin(GPIOA, GPIO_PINNUMBER_0)));
 
-	//Enable the SPI peripheral
-	SPI_PeripheralEnable(SPI2, ENABLE);
-	SPI_SendData(SPI2, (uint8_t*)userData, strlen(userData));
+			for(int i=0; i<20000; i++);
+			//SSI Enable
+			SPI_SSIConfig(SPI2, ENABLE);
 
-	while(1);
+		// First send the length of data to be sent to slave
+			uint8_t dataLength = strlen(userData);
+
+			SPI_SendData(SPI2, &dataLength, 1);
+
+
+			//Enable the SPI peripheral
+			SPI_PeripheralEnable(SPI2, ENABLE);
+			SPI_SendData(SPI2, (uint8_t*)userData, strlen(userData));
+
+			//Get the flag status checking whether the transmsion is complete
+			while(SPI_GetFlagStatus(SPI2, SPI_SR2_BUSY));
+
+			SPI_PeripheralEnable(SPI2, ENABLE);
+
+	}
+
 	return 0;
 }

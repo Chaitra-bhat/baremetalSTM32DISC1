@@ -1,0 +1,41 @@
+/*
+ * uart.c
+ *
+ *  Created on: Dec 31, 2021
+ *      Author: Navjeevan
+ */
+
+#include<uart.h>
+
+void USART_PeriClockEnable(USART_RegDef_t *pUSARTx, uint8_t EnaOrDis)
+{
+	if(EnaOrDis == ENABLE)
+	{
+		if(pUSARTx == USART1)
+			USART1_PCLK_ENABLE();
+		else if(pUSARTx == USART2)
+			USART2_PCLK_ENABLE();
+		else if(pUSARTx == USART3)
+			USART3_PCLK_ENABLE();
+		else if(pUSARTx == UART4)
+			UART4_PCLK_ENABLE();
+		else if(pUSARTx == UART5)
+			UART5_PCLK_ENABLE();
+		else if(pUSARTx == USART6)
+			USART6_PCLK_ENABLE();
+	}
+	else
+	{	if(pUSARTx == USART1)
+				USART1_PCLK_DISABLE();
+			else if(pUSARTx == USART2)
+				USART2_PCLK_DISABLE();
+			else if(pUSARTx == USART3)
+				USART3_PCLK_DISABLE();
+			else if(pUSARTx == UART4)
+				UART4_PCLK_DISABLE();
+			else if(pUSARTx == UART5)
+				UART5_PCLK_DISABLE();
+			else if(pUSARTx == USART6)
+				USART6_PCLK_DISABLE();
+	}
+}

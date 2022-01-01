@@ -1,0 +1,26 @@
+18:57:38 **** Incremental Build of configuration Debug for project spi_drivers_interrupt ****
+make -j4 all 
+arm-none-eabi-gcc "../drivers/Src/spi.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/Navjeevan/OneDrive/Documents/GitHub/baremetalSTM32DISC1/DRIVERS_STM32F407VG/WORKSPACE/spi_drivers_interrupt/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"drivers/Src/spi.d" -MT"drivers/Src/spi.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/spi.o"
+../drivers/Src/spi.c: In function 'SPI_ReceiveData':
+../drivers/Src/spi.c:148:5: warning: value computed is not used [-Wunused-value]
+  148 |     *pRxBuffer++;
+      |     ^~~~~~~~~~~~
+arm-none-eabi-gcc "../drivers/Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/Navjeevan/OneDrive/Documents/GitHub/baremetalSTM32DISC1/DRIVERS_STM32F407VG/WORKSPACE/spi_drivers_interrupt/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"drivers/Src/gpio.d" -MT"drivers/Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/gpio.o"
+arm-none-eabi-gcc "../Src/11_spi_testing_interrupt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/Navjeevan/OneDrive/Documents/GitHub/baremetalSTM32DISC1/DRIVERS_STM32F407VG/WORKSPACE/spi_drivers_interrupt/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/11_spi_testing_interrupt.d" -MT"Src/11_spi_testing_interrupt.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/11_spi_testing_interrupt.o"
+arm-none-eabi-gcc -o "spi_drivers_interrupt.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Navjeevan\OneDrive\Documents\GitHub\baremetalSTM32DISC1\DRIVERS_STM32F407VG\WORKSPACE\spi_drivers_interrupt\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="spi_drivers_interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: spi_drivers_interrupt.elf
+ 
+arm-none-eabi-objdump -h -S  spi_drivers_interrupt.elf  > "spi_drivers_interrupt.list"
+arm-none-eabi-objcopy  -O binary  spi_drivers_interrupt.elf  "spi_drivers_interrupt.bin"
+arm-none-eabi-size   spi_drivers_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2904	      8	   1568	   4480	   1180	spi_drivers_interrupt.elf
+Finished building: default.size.stdout
+ 
+Finished building: spi_drivers_interrupt.bin
+Finished building: spi_drivers_interrupt.list
+ 
+ 
+
+18:57:39 Build Finished. 0 errors, 1 warnings. (took 1s.152ms)
+

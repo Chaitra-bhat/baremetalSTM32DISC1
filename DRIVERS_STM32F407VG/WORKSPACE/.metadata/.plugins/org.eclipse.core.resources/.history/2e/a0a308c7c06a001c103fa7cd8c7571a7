@@ -1,0 +1,30 @@
+/*
+ * uart.h
+ *
+ *  Created on: Dec 31, 2021
+ *      Author: Navjeevan
+ */
+
+#ifndef INC_UART_H_
+#define INC_UART_H_
+
+#include<stm32f4xx_driver.h>
+
+typedef struct
+{
+	uint32_t USARTMode;
+	uint32_t USARTBaud;
+	uint32_t USART_StopBits;
+	uint32_t USART_WordLength;
+	uint32_t USART_ParityControl;
+	uint32_t USART_HWFlowControl;
+}USART_Config_t;
+
+typedef struct
+{
+ USART_RegDef_t pUSARTx;
+
+
+}USART_Handle_t;
+
+#endif /* INC_UART_H_ */

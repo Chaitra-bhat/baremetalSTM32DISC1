@@ -57,6 +57,7 @@ typedef struct{
 #define SPI_SSM_DISBALED					0
 
 #define SPI_TXE_FLAG						(1<<1)
+#define SPI_SR2_BUSY						(1<<7)
 // Function prototypes
 void SPI_PeriClkEnable(SPI_RegDef_t *pSPIx, uint8_t EnaOrDis);
 
@@ -77,4 +78,5 @@ void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQpriority);
 uint8_t SPI_GetFlagStatus(SPI_RegDef_t *pSPIx, uint32_t Flagname);
 void SPI_PeripheralEnable(SPI_RegDef_t *pSPIx, uint8_t EnaOrDis);
 void SPI_SSIConfig(SPI_RegDef_t *pSPIx, uint8_t EnaOrDis);
+void SPI_SSOEConfig(SPI_RegDef_t *pSPIx, uint8_t EnaOrDis);
 #endif /* INC_SPI_H_ */

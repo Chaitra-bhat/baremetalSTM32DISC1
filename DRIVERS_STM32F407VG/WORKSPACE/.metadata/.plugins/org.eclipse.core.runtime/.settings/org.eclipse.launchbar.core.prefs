@@ -7,3 +7,5 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:gpio_drivers/activeLaunchMode=d
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:gpio_drivers/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:spi_drivers/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:spi_drivers/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:spi_drivers_arduino/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:spi_drivers_arduino/activeLaunchTarget=null\:---

@@ -1,0 +1,5 @@
+uart.c:10:6:USART_PeriClockEnable	16	static
+uart.c:43:6:USART_Init	16	static
+uart.c:52:6:USART_DeInit	16	static
+uart.c:70:6:USART_PeripheralEnable	16	static
+uart.c:83:9:USART_GetFlagStatus	16	static
