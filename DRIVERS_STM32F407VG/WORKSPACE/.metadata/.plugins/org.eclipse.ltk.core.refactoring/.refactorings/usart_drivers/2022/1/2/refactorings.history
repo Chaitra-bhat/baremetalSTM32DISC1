@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;10_dht11.c&apos; to &apos;Src&apos;" description="Move &apos;10_dht11.c&apos; to &apos;Src&apos;" destination="Src" element1="/gpio_drivers/Src/10_dht11.c" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1641099215635" updateReferences="true"/>
+</session>

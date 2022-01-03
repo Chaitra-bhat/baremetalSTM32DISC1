@@ -1,0 +1,3 @@
+rcc.c:17:10:RCC_GetPCLK1Value	24	static
+rcc.c:66:10:RCC_GetPCLK2Value	24	static
+rcc.c:104:11:RCC_GetPLLOutputClock	4	static

@@ -139,9 +139,9 @@
                         					
                     </folderInfo>
                     					
-                    <fileInfo id="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.1019011032.1100377442" name="09_Interrupt.c" rcbsApplicability="disable" resourcePath="Src/09_Interrupt.c" toolsToInvoke="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.1638402755.705472169">
+                    <fileInfo id="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.1019011032.917005662" name="01_blueLedToggle.c" rcbsApplicability="disable" resourcePath="Src/01_blueLedToggle.c" toolsToInvoke="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.1638402755.906679909">
                         						
-                        <tool id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.1638402755.705472169" name="MCU GCC Compiler" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.1638402755"/>
+                        <tool id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.1638402755.906679909" name="MCU GCC Compiler" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.1638402755"/>
                         					
                     </fileInfo>
                     					
@@ -149,7 +149,7 @@
                         						
                         <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Inc"/>
                         						
-                        <entry excluding="09_Interrupt.c|01_blueLedToggle.c|08_externalButton&amp;Led.c|07_buttonLed.c|06_blueLedToggle_openDrain.c|05_allLedToggle.c|04_redLedToggle.c|03_greenLedToggle.c|02_orangeLedToggle.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Src"/>
+                        <entry excluding="10_spi_testing.c|09_Interrupt.c|08_externalButton&amp;Led.c|07_buttonLed.c|06_blueLedToggle_openDrain.c|05_allLedToggle.c|04_redLedToggle.c|03_greenLedToggle.c|02_orangeLedToggle.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Src"/>
                         						
                         <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Startup"/>
                         						

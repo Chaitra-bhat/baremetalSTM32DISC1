@@ -1,0 +1,102 @@
+/*
+ * 01_ledToggle.c
+ *
+ *  Created on: Dec 26, 2021
+ *      Author: Navjeevan
+ */
+
+#include<stdio.h>
+#include<gpio.h>
+
+#define GPIOA_ENA		(1U<<0)
+#define USART2ENA		(1U<<17)
+
+#define SYS_FREQ		16000000
+#define USARt_BAUDRATE  115200
+
+//function prototypes
+void usart2_tx_init(void);
+static void setBaudrate(USART_RegDef_t *USARTx, uint32_t PeriphClock, uint32_t Baudrate);
+static uint16_t compute_uart_baudrate(uint32_t PeriphClock, uint32_t Baudrate);
+void uart2_write(int ch);
+
+int __io_putchar(int ch)
+{
+	uart2_write(ch);
+	return ch;
+}
+
+int main()
+{
+	GPIOHandle_t DHT11;
+	uint8_t data ;
+
+	DHT11.pGPIOx = GPIOA;
+	DHT11.GPIO_PinConfig.GPIO_PinNumber = GPIO_PINNUMBER_7;
+	DHT11.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_INPUT;
+	DHT11.GPIO_PinConfig.GPIO_PinSpeed = GPIO_OSPEED_MEDIUM;
+	//DHT11.GPIO_PinConfig.GPIO_PinOPType = GPIO_OTYPE_PUSHPULL;
+	DHT11.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_PUPDTYPE_NONE;
+
+	GPIO_PeriClockEnable(GPIOA, ENABLE);
+	GPIO_Init(&DHT11);
+
+	while(1)
+	{
+		usart2_tx_init();
+		data = GPIO_ReadPin(GPIOA, GPIO_PINNUMBER_7);
+		delay(100);
+		printf("Temp: %d\n", data);
+	}
+
+
+	return 0;
+}
+
+void usart2_tx_init(void)
+{
+
+	// enable clock for GPIO and USART
+	RCC->RCC_AHB1ENR |= GPIOA_ENA;
+	RCC->APB1ENR |= USART2ENA;
+
+	//set alternate function
+	GPIOA->MODER |= (2U<<4);
+
+	//set alternate function type
+	GPIOA->AFR[0] |= (7U<<8);
+
+	//Configure Baud rate
+	setBaudrate(USART2, SYS_FREQ, USARt_BAUDRATE);
+
+	//set the transfer direction
+	USART2->USART_CR1 = (1U<<3);
+
+	//enable module from control register
+	USART2->USART_CR1 |= (1U<<13);
+
+
+}
+
+
+void uart2_write(int ch)
+{
+	//Transmit data register is empty
+	while(!(USART2->USART_SR & (1U<<7)));
+
+	//Write to transmit
+
+	USART2->USART_DR |= (ch & 0xFF);
+}
+
+static void setBaudrate(USART_RegDef_t *USARTx, uint32_t PeriphClock, uint32_t Baudrate)
+{
+	USARTx->USART_BRR |= compute_uart_baudrate(PeriphClock, Baudrate);
+}
+
+static uint16_t compute_uart_baudrate(uint32_t PeriphClock, uint32_t Baudrate)
+{
+	return ((PeriphClock + (Baudrate/2U))/Baudrate);
+}
+
+

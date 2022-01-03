@@ -1,4 +1,4 @@
-13:18:41 **** Incremental Build of configuration Debug for project gpio_drivers ****
+10:24:08 **** Incremental Build of configuration Debug for project gpio_drivers ****
 make -j4 all 
 arm-none-eabi-gcc "../drivers/Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/Navjeevan/OneDrive/Documents/GitHub/baremetalSTM32DISC1/DRIVERS_STM32F407VG/WORKSPACE/gpio_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"drivers/Src/gpio.d" -MT"drivers/Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/gpio.o"
 arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f407vgtx.d" -MT"Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f407vgtx.o" "../Startup/startup_stm32f407vgtx.s"
@@ -20,5 +20,5 @@ Finished building: gpio_drivers.list
 Finished building: gpio_drivers.bin
  
 
-13:18:42 Build Finished. 0 errors, 0 warnings. (took 1s.461ms)
+10:24:09 Build Finished. 0 errors, 0 warnings. (took 1s.320ms)
 
